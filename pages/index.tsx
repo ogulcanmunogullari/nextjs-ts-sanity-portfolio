@@ -13,12 +13,10 @@ import { fetchSkills } from "../utils/fetchSkills"
 import { fetchSocials } from "../utils/fetchSocials"
 
 type Props = {
-  pageInfo: PageInfo;
-  skills: Skill[];
-  projects: Project[];
-  socials: Social[];
-
-
+  pageInfo: PageInfo
+  skills: Skill[]
+  projects: Project[]
+  socials: Social[]
 }
 
 const Home = ({ pageInfo, skills, projects, socials }: Props) => {
@@ -62,10 +60,10 @@ const Home = ({ pageInfo, skills, projects, socials }: Props) => {
 export default Home
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const pageInfo: PageInfo = await fetchPageInfo() || null
-  const skills: Skill[] = await fetchSkills() || null
-  const projects: Project[] = await fetchProjects() || null
-  const socials: Social[] = await fetchSocials() || null
+  const pageInfo: PageInfo = await fetchPageInfo()
+  const skills: Skill[] = await fetchSkills()
+  const projects: Project[] = await fetchProjects()
+  const socials: Social[] = await fetchSocials()
 
   return {
     props: {

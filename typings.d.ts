@@ -1,11 +1,10 @@
-export interface SanityBody {
+interface SanityBody {
   _createdAt: string
   _id: string
   _rev: string
-  _type: string
   _updatedAt: string
 }
-export interface Image {
+interface Image {
   _type: "image"
   asset: {
     _ref: string
