@@ -8,7 +8,7 @@ type SanityConfig = {
   apiVersion: string
 }
 
-export const config = {
+export const config = <SanityConfig>{
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
   apiVersion: "2021-10-21",
@@ -17,4 +17,4 @@ export const config = {
 export const sanityClient = createClient(config)
 
 export const urlFor = (source: any) =>
-  createImageUrlBuilder(config as SanityConfig).image(source)
+  createImageUrlBuilder(config).image(source)
