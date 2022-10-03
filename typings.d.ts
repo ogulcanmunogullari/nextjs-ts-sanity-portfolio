@@ -1,15 +1,28 @@
-interface SanityBody {
+export interface SanityBody {
   _createdAt: string
   _id: string
   _rev: string
-  _type: string
   _updatedAt: string
 }
-interface Image {
+export interface Image {
   _type: "image"
   asset: {
     _ref: string
     _type: "reference"
+  }
+  crop: {
+    _type: "sanity.imageCrop"
+    bottom: number
+    left: number
+    right: number
+    top: number
+  }
+  hotspot: {
+    _type: "sanity.imageHotspot"
+    height: number
+    width: number
+    x: number
+    y: number
   }
 }
 
@@ -21,14 +34,10 @@ export interface PageInfo extends SanityBody {
   name: string
   profilePic: Image
   role: string
-  slidingText: array<string>
+  slidingText: string[]
+  socials: Social[]
 }
 
-export interface Tecnology extends SanityBody {
-  _type: "skill"
-  image: Image
-  title: string
-}
 export interface Skill extends SanityBody {
   _type: "skill"
   image: Image
@@ -38,7 +47,7 @@ export interface Project extends SanityBody {
   _type: "project"
   summary: string
   title: string
-  tecnologies: array<Tecnology>
+  tecnologies: Skill[]
   image: Image
   linkToBuild: string
 }
