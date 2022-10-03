@@ -1,4 +1,4 @@
-import React from "react"
+
 import SocialIconComponent from "./SocialIcon";
 import { motion } from "framer-motion"
 import { Social } from "../typings";

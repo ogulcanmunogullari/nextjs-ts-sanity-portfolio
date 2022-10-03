@@ -1,4 +1,3 @@
-import React, { lazy } from "react"
 import Image from "next/image"
 import { Cursor, useTypewriter } from "react-simple-typewriter"
 import BackgroundCircles from "./BackgroundCircles"
