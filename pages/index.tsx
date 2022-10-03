@@ -6,10 +6,6 @@ import Hero from "../components/Hero"
 import Projects from "../components/Projects"
 import Skills from "../components/Skills"
 import { PageInfo, Project, Skill, Social } from "../typings"
-import { fetchPageInfo } from "../utils/fetchPageInfo"
-import { fetchProjects } from "../utils/fetchProjects"
-import { fetchSkills } from "../utils/fetchSkills"
-import { fetchSocials } from "../utils/fetchSocials"
 
 type Props = {
   pageInfo: PageInfo;
@@ -56,10 +52,21 @@ const Home = ({ pageInfo, skills, projects, socials }: Props) => {
 export default Home
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const socials: Social[] = await fetchSocials();
-  const pageInfo: PageInfo = await fetchPageInfo();
-  const skills: Skill[] = await fetchSkills();
-  const projects: Project[] = await fetchProjects();
+  const resSocial = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getSocials`)
+  const dataSocial = await resSocial.json()
+  const socials: Social[] = dataSocial
+
+  const resPageInfo = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getPageInfo`)
+  const dataPageInfo = await resPageInfo.json()
+  const pageInfo: PageInfo = dataPageInfo
+
+  const resSkills = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getSkills`)
+  const dataSkills = await resSkills.json()
+  const skills: Skill[] = dataSkills
+
+  const resProjects = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getProjects`)
+  const dataProjects = await resProjects.json()
+  const projects: Project[] = dataProjects
   return {
     props: {
       pageInfo,
