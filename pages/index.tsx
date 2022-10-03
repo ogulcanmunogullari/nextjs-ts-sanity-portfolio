@@ -13,7 +13,7 @@ import { fetchSkills } from "../utils/fetchSkills"
 import { fetchSocials } from "../utils/fetchSocials"
 
 type Props = {
-  pageInfo: PageInfo;
+  pageInfo: any;
   skills: Skill[];
   projects: Project[];
   socials: Social[];
@@ -21,7 +21,8 @@ type Props = {
 
 }
 
-const Home = ({ pageInfo, skills, projects, socials }: Props) => {
+const Home = (props: Props) => {
+  const { pageInfo, skills, projects, socials } = props
   return (
     <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-scroll scroll-smooth z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 snap-start">
       <Head>
@@ -62,10 +63,10 @@ const Home = ({ pageInfo, skills, projects, socials }: Props) => {
 export default Home
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const pageInfo: PageInfo = await fetchPageInfo() || null
-  const skills: Skill[] = await fetchSkills() || null
-  const projects: Project[] = await fetchProjects() || null
-  const socials: Social[] = await fetchSocials() || null
+  const pageInfo: PageInfo = await fetchPageInfo();
+  const skills: Skill[] = await fetchSkills();
+  const projects: Project[] = await fetchProjects();
+  const socials: Social[] = await fetchSocials();
 
   return {
     props: {
