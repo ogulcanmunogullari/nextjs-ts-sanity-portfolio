@@ -11,4 +11,6 @@
 - Sanity
 - Netlify
 
-Live on <a href="https://ogulcanmunogullari.netlify.app/"> Netlify </a>
+Can't deploy because of this error;
+Error occurred prerendering page "/"
+But it works perfect on localhost.
