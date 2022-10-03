@@ -10,7 +10,6 @@ type Props = {
 }
 
 function Skill({ directionLeft, skillImage, projectSize }: Props) {
-  console.log(projectSize)
   return (
     <div className="group relative flex">
       <motion.img

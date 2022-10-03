@@ -21,13 +21,13 @@ function Skills({ skills }: Props) {
       <div className="grid grid-cols-3 mt-20 gap-1 xs:gap-5">
         {left.map((skill) => {
           return (
-            <Skill key={skill._id} directionLeft={true} skillImage={skill.image} />
+            <Skill key={skill._id} projectSize={false} directionLeft={true} skillImage={skill.image} />
 
           )
         })}
         {right.map((skill) => {
           return (
-            <Skill key={skill._id} directionLeft={false} skillImage={skill.image} />
+            <Skill key={skill._id} projectSize={false} directionLeft={false} skillImage={skill.image} />
 
           )
         })}
