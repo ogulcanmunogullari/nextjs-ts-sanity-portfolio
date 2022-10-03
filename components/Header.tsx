@@ -1,12 +1,12 @@
-
 import SocialIconComponent from "./SocialIcon";
 import { motion } from "framer-motion"
 import { Social } from "../typings";
 type Props = {
-  socials: Social[];
+  socials: Social[]
 }
 
 export default function Header({ socials }: Props) {
+
   const otherSocials = socials.filter((social) => social.title !== "Linkedin")
   const linkedin = socials.filter((social) => social.title === "Linkedin")
   return (

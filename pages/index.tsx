@@ -32,7 +32,7 @@ const Home = ({ pageInfo, skills, projects, socials }: Props) => {
       <section id="skills" className="snap-start">
         <Skills skills={skills} />
       </section>
-      {/* Projects */}
+
       <section id="projects" className="snap-center ">
         <Projects projects={projects} />
       </section>
@@ -54,19 +54,19 @@ export default Home
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const resSocial = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getSocials`)
   const dataSocial = await resSocial.json()
-  const socials: Social[] = dataSocial
+  const socials = dataSocial.socials
 
   const resPageInfo = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getPageInfo`)
   const dataPageInfo = await resPageInfo.json()
-  const pageInfo: PageInfo = dataPageInfo
+  const pageInfo = dataPageInfo.pageInfo
 
   const resSkills = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getSkills`)
   const dataSkills = await resSkills.json()
-  const skills: Skill[] = dataSkills
+  const skills = dataSkills.skills
 
   const resProjects = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getProjects`)
   const dataProjects = await resProjects.json()
-  const projects: Project[] = dataProjects
+  const projects = dataProjects.projects
   return {
     props: {
       pageInfo,
@@ -76,4 +76,4 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     },
     revalidate: 10,
   }
-}
+} 
