@@ -11,6 +11,4 @@
 - Sanity
 - Netlify
 
-Can't deploy because of this error;
-Error occurred prerendering page "/"
-But it works perfect on localhost.
+<a href="https://ogulcanmunogullari.vercel.app/"> Vercel </a>
