@@ -9,6 +9,5 @@
 - React Social Icons
 - React Simple Typewriter
 - Sanity
-- Netlify
 
 <a href="https://ogulcanmunogullari.vercel.app/"> Vercel </a>
