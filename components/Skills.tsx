@@ -1,9 +1,9 @@
 import Skill from "./Skill"
 import { motion } from "framer-motion"
-import { Skill as Skills } from "../typings";
+import { Skill as Skills } from "../typings"
 
 type Props = {
-  skills: Skills[];
+  skills: Skills[]
 }
 
 function Skills({ skills }: Props) {
@@ -17,20 +17,27 @@ function Skills({ skills }: Props) {
       <h3 className="absolute top-36 xs:top-24 uppercase tracking-[3px] text-gray-500 text-sm">
         Hover over a skill for color.
       </h3>
-      <div className="grid grid-cols-3 mt-20 gap-1 xs:gap-5">
+      <div className="grid grid-cols-3 sm:grid-cols-4 mt-20 gap-1 xs:gap-5">
         {left.map((skill) => {
           return (
-            <Skill key={skill._id} projectSize={false} directionLeft={true} skillImage={skill.image} />
-
+            <Skill
+              key={skill._id}
+              projectSize={false}
+              directionLeft={true}
+              skillImage={skill.image}
+            />
           )
         })}
         {right.map((skill) => {
           return (
-            <Skill key={skill._id} projectSize={false} directionLeft={false} skillImage={skill.image} />
-
+            <Skill
+              key={skill._id}
+              projectSize={false}
+              directionLeft={false}
+              skillImage={skill.image}
+            />
           )
         })}
-
       </div>
     </motion.div>
   )
