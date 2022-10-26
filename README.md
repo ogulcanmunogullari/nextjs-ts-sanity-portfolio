@@ -10,4 +10,4 @@
 - React Simple Typewriter
 - Sanity
 
-<a href="https://ogulcanmunogullari.vercel.app/"> Vercel </a>
+<a href="https://ogulcanmunogullari.netlify.app/"> Live on Netlify </a>
