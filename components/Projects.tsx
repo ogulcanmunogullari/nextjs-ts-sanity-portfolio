@@ -46,7 +46,7 @@ function Projects({ projects }: Props) {
                   target="_blank"
                   rel="noreferrer"
                   className="text-[#F7AB0A] text-sm sm:text-lg font-semibold">
-                  View Project
+                  View Live
                 </a>
               </div>
 
